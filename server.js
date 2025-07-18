@@ -14,11 +14,11 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 
 // Endpoint 1: For all top news from India
+Endpoint 1: For all top news from India
 app.get('/api/news/india', (req, res) => {
-  // 3. Use the library to get top headlines
+  // We removed the 'q' parameter to get ALL top headlines from India
   newsapi.v2.topHeadlines({
-    q: 'business OR technology OR AI OR "current affairs"',
-    country: 'in'
+    country: 'in' 
   }).then(response => {
     res.json(response);
   }).catch(error => {
